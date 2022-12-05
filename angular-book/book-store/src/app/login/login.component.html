@@ -6,18 +6,13 @@
     <div class="container">
       <div class="login-form">
         <h1 style="text-align: center">ĐĂNG NHẬP</h1>
-        <form style="margin-top: 40px" action="">
-          <input type="email" placeholder="Tên đăng nhập/Số điện thoại">
-          <input type="password" placeholder="Mật khẩu">
-
-          <div class="remember-form">
-            <input type="checkbox">
-            <span>Lưu mật khẩu</span>
-          </div>
+        <form style="margin-top: 40px" [formGroup]="appUserForm">
+          <input formControlName="username" type="text" placeholder="Tên đăng nhập/Số điện thoại">
+          <input formControlName="password" type="password" placeholder="Mật khẩu">
           <div class="forget-pass">
             <a href="#">Quên mật khẩu ?</a>
           </div>
-          <button style="margin:0 0 0 0;width: 100%;color: #3B3B3B;margin-top: 30px" type="submit">ĐĂNG NHẬP</button>
+          <button style="margin:0 0 0 0;width: 100%;color: #3B3B3B;margin-top: 30px" (click)="login()">ĐĂNG NHẬP</button>
           <hr style="font-weight: bold;margin-top: 20px">
         </form>
         <div class="row" >

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {CategoryService} from '../service/category.service';
+import {BookService} from '../service/book.service';
+import {Category} from '../model/category';
+import {Book} from '../model/book';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  categoryList: Category[];
+  bookList: Book[];
 
-  ngOnInit(): void {
+  constructor(private categoryService: CategoryService,
+              private bookService: BookService) {
   }
 
+
+  getAllCategory() {
+    this.categoryService.getAllCategory().subscribe(value => this.categoryList = value);
+  }
+
+  getAllBook() {
+    this.bookService.getAllBook().subscribe(value => this.bookList = value);
+  }
+  ngOnInit(): void {
+    this.getAllCategory();
+    this.getAllBook();
+  }
 }

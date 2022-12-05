@@ -4,27 +4,18 @@
     <div class="row">
 
       <div class="col-md-6">
-        <a href="#" class="product-image"><img src="assets/images/main-banner2.jpg"></a>
+        <img  [src]="book.url" alt="" style="width: 413px; height: 602px">
       </div>
 
       <div class="col-md-6 pl-5">
         <div class="product-detail">
-          <h1>Birds Gonna Be Happy</h1>
-          <p>Fiction</p>
-          <span class="price colored">$45.00</span>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
+          <h1 style="margin-top: 0">{{book.name}}</h1>
+          <p>Tác giả:{{book.authors}}</p>
+          <p>Giá tiền: {{book.price}}</p>
+          <p>Tiêu đề: {{book.category.name}}</p>
+          <p>Ngày xuất bản: {{book.publishedDate}}</p>
+          <p>Nhà xuất bản: {{book.publisher}}</p>
+          <p>Số trang: {{book.totalPage}}</p>
           <button type="submit" name="add-to-cart" value="27545" class="button">Add to cart</button>
 
         </div>

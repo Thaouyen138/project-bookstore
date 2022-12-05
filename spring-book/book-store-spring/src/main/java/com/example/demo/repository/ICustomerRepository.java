@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
-//    @Query(value = "SELECT * FROM customer WHERE user_name = :username", nativeQuery = true)
-//    Optional<Customer> findCustomerByUserName(@Param("username") String username);
+    @Query(value = "SELECT * FROM customer WHERE user_name = :username", nativeQuery = true)
+    Optional<Customer> findCustomerByUserName(@Param("username") String username);
 }

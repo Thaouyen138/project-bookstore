@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  username = 'Tài khoản';
   constructor() { }
 
   ngOnInit(): void {
+    this.username = sessionStorage.getItem('username');
   }
 
 }

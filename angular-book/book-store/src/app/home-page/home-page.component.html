@@ -5,68 +5,18 @@
 
       <div class="products-grid grid">
 
-        <figure class="product-style">
-          <img src="assets/images/tab-item4.jpg" alt="Books" class="product-item">
-          <button routerLink="/detail" type="button" class="add-to-cart" data-product-tile="add-to-cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-          <button type="button" style="left: 184px" class="add-to-cart" data-product-tile="add-to-cart">
+        <figure *ngFor="let book of bookList" class="product-style">
+          <img [src]="book.url" alt="Books" class="product-item">
+          <button routerLink="/detail/{{book.id}}" type="button" style="left: 184px" class="add-to-cart" data-product-tile="add-to-cart">
             <i class="fa-solid fa-info"></i>
           </button>
-          <figcaption>
-            <h3>Just felt from outside</h3>
-            <p>Nicole Wilson</p>
-            <div class="item-price">$ 40.00</div>
-          </figcaption>
-        </figure>
-
-        <figure class="product-style">
-          <img src="assets/images/tab-item5.jpg" alt="Books" class="product-item">
           <button type="button" class="add-to-cart" data-product-tile="add-to-cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
-          <button routerLink="/detail" type="button" style="left: 184px" class="add-to-cart" data-product-tile="add-to-cart">
-            <i class="fa-solid fa-info"></i>
-          </button>
           <figcaption>
-            <h3>Peaceful Enlightment</h3>
-            <p>Marmik Lama</p>
-            <div class="item-price">$ 40.00</div>
-          </figcaption>
-        </figure>
-
-        <figure class="product-style">
-          <img src="assets/images/tab-item6.jpg" alt="Books" class="product-item">
-          <button type="button" class="add-to-cart" data-product-tile="add-to-cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button>
-          <button routerLink="/detail" type="button" style="left: 184px" class="add-to-cart" data-product-tile="add-to-cart">
-            <i class="fa-solid fa-info"></i>
-          </button>
-          <figcaption>
-            <h3>Great travel at desert</h3>
-            <p>Sanchit Howdy</p>
-            <div class="item-price">$ 40.00</div>
-          </figcaption>
-        </figure>
-
-        <figure class="product-style">
-          <img src="assets/images/tab-item7.jpg" alt="Books" class="product-item">
-          <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-          <figcaption>
-            <h3>Life among the pirates</h3>
-            <p>Armor Ramsey</p>
-            <div class="item-price">$ 40.00</div>
-          </figcaption>
-        </figure>
-
-        <figure class="product-style">
-          <img src="assets/images/tab-item8.jpg" alt="Books" class="product-item">
-          <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
-          <figcaption>
-            <h3>Simple way of piece life</h3>
-            <p>Armor Ramsey</p>
-            <div class="item-price">$ 40.00</div>
+            <h3>{{book.name}}</h3>
+            <p>{{book.authors}}</p>
+            <div class="item-price">{{book.price}} $</div>
           </figcaption>
         </figure>
 

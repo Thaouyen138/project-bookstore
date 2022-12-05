@@ -9,7 +9,7 @@ import {AppComponent} from './app.component';
 const routes: Routes = [
   {path: '', component: HomePageComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'detail', component: DetailComponent}
+  {path: 'detail/:id', component: DetailComponent}
 ];
 
 @NgModule({

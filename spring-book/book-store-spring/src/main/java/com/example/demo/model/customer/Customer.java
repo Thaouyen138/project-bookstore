@@ -1,6 +1,8 @@
 package com.example.demo.model.customer;
 
 import com.example.demo.model.transaction.Transaction;
+import com.example.demo.model.user.AppUser;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -27,6 +29,10 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
+    @OneToOne
+    @JoinColumn(name = "user_name", referencedColumnName = "user_name")
+    private AppUser appUser;
+
     @OneToMany(mappedBy = "customer")
     private List<Transaction> transactionList;
 
@@ -43,6 +49,14 @@ public class Customer {
         this.status = status;
         this.email = email;
         this.transactionList = transactionList;
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 
     public Integer getId() {
