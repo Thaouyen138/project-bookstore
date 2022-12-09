@@ -23,11 +23,8 @@ public class BookController {
     }
 
     @GetMapping("public/bookList")
-    public ResponseEntity<?> getAllBook(@RequestParam(name = "name", defaultValue = "") String name,
-                                        @RequestParam(name = "categoryId", defaultValue = "") String categoryId
-
-    ) {
-        return new ResponseEntity<>(iBookService.findAllBook(name,categoryId), HttpStatus.OK);
+    public ResponseEntity<?> getAllBook(@RequestParam(name = "name", defaultValue = "") String name) {
+        return new ResponseEntity<>(iBookService.findAllBook(name), HttpStatus.OK);
     }
 
     @GetMapping("public/findByIdBook/{id}")

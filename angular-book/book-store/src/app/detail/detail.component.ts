@@ -25,6 +25,4 @@ export class DetailComponent implements OnInit {
     );
   }
 
-  // findByIdBook() {
-  // }
 }

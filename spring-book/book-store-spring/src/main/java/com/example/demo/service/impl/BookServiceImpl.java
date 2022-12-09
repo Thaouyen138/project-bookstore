@@ -15,8 +15,8 @@ public class BookServiceImpl implements IBookService {
     private IBookRepository iBookRepository;
 
     @Override
-    public List<Book> findAllBook(String name, String categoryId) {
-        return iBookRepository.findAllBook("%" + name + "%" ,"%" + categoryId + "%");
+    public List<Book> findAllBook(String name) {
+        return iBookRepository.findAllBook("%" + name + "%");
     }
 
     public Book findByIdBook(Integer id) {

@@ -7,16 +7,11 @@ import {Book} from '../model/book';
 @Injectable({
   providedIn: 'root'
 })
-export class BookService {
+export class HeaderRService {
   API_URL = `${environment.API_URL}`;
   constructor(private http: HttpClient) {}
 
-  public getAllBook(name: string): Observable<any> {
-    return this.http.get<Book[]>(this.API_URL + 'public/bookList?name=' + name );
+  public getAllBook(name: string, categoryId: string): Observable<any> {
+    return this.http.get<Book[]>(this.API_URL + 'public/bookList?name=' + name + '&category=' + categoryId );
   }
-
-  public findByID(id: number): Observable<Book> {
-    return this.http.get<Book>(this.API_URL + 'public/findByIdBook/' + id);
-  }
-
 }

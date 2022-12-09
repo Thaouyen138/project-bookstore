@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IBookService {
 
-    List<Book> findAllBook(String name, String categoryId);
+    List<Book> findAllBook(String name);
 
     Book findByIdBook(Integer id);
 }
